@@ -9,12 +9,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "SSLinkedIn"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Linkedin Oauth Helper, depend on Linkedin Native App installed or not, using Linkdin IOS SDK or UIWebView to login, support Swift with iOS 9"
 
 
   s.homepage     = "https://github.com/simformsolutions/SSLinkedIn.git"
-  s.license     = { :type => "MIT", :file => "LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author       = { "PranayPatel" => "Pranay.p@simformsolutions.com" }
  
@@ -23,11 +23,11 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/simformsolutions/SSLinkedIn.git", :tag => "#{s.version}" }
 
-  s.source_files  = 'Source/Helper/*.*', 'Source/Entities/*.*'
-
-  s.preserve_paths      = 'linkedin-sdk.framework'
-  s.vendored_frameworks = 'linkedin-sdk.framework'
-  s.requires_arc        = true
+  s.source_files        = 'Source/*.swift'
+  s.module_name         = 'SSLinkedInSwift'
+  s.preserve_paths      = 'Source/module.modulemap', 'Source/LinkedInSDK.h'
+  s.vendored_frameworks = 'Source/linkedin-sdk.framework'
+  s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/Source' }
   
 
   s.dependency 'AFNetworking', '~> 3.1.0'
