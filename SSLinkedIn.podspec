@@ -25,11 +25,11 @@ Pod::Spec.new do |s|
 
   s.source_files  = 'Source/Helper/*.*', 'Source/Entities/*.*'
 
-  s.preserve_paths      = 'Source/frameworks/*.*'
-  s.vendored_frameworks = 'Source/frameworks/*.*'
-  s.framework     = "linkedin-sdk"
-  s.requires_arc  = true
+  s.preserve_paths      = 'linkedin-sdk.framework'
+  s.vendored_frameworks = 'linkedin-sdk.framework'
+  s.requires_arc        = true
   
+
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'IOSLinkedInAPIFix', '~> 2.0.4'
 
